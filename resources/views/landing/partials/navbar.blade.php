@@ -1,7 +1,7 @@
 <div class="container-fluid sticky-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
-            <a href="index.html" class="navbar-brand">
+            <a href="#" class="navbar-brand">
                 <h1 class="text-white">SapApoteker</h1>
             </a>
             <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"

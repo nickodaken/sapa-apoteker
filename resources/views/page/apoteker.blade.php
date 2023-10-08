@@ -52,7 +52,7 @@
                                     <b>Rp. 20.000</b>
                                 </div>
                                 <div class="col-lg-6 d-flex justify-content-end">
-                                    <button type="button" class="btn btn-primary">Chat</button>
+                                    <button type="button" class="btn btn-primary" disabled>Chat</button>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                                     <b>Rp. 20.000</b>
                                 </div>
                                 <div class="col-lg-6 d-flex justify-content-end">
-                                    <button type="button" class="btn btn-primary">Chat</button>
+                                    <button type="button" class="btn btn-primary" disabled>Chat</button>
                                 </div>
                             </div>
                         </div>
