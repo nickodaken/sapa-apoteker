@@ -1,5 +1,9 @@
 @extends('landing.layouts')
 @section('content')
+    @php
+        use App\Models\Apoteker;
+        $apotekers = Apoteker::all();
+    @endphp
     <div class="container-fluid pt-5 bg-primary hero-header">
         <div class="container pt-5">
             <div class="row g-5 pt-5">
@@ -16,6 +20,58 @@
     <div class="container">
         <div class="container-fluid py-5">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4" data-wow-delay="0.3s">
+                @foreach ($apotekers as $item)
+                    <div class="col">
+                        <div class="card h-100" style="width: 18rem;">
+                            <img src="{{ asset($item->image) }}" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $item->user->name }}</h5>
+                                <p class="card-text">{{ $item->alumni }}</p>
+                                <p class="card-text">Praktik di {{ $item->practice }}</p>
+                                <p><span class="badge rounded-pill bg-secondary"><i class="bi bi-bag-fill"></i>
+                                        {{ $item->experience }}
+                                        Tahun</span></p>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <b>Rp {{ number_format($item->price) }}</b>
+                                    </div>
+                                    <div class="col-lg-6 d-flex justify-content-end">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal" class="btn btn-primary">Konsultasi</button>
+                                    </div>
+                                    @include('modal.payment')
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <small class="text-body-secondary"><i class="bi bi-circle-fill text-success"></i>
+                                    Online</small>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+                {{-- <div class="col">
+                    <div class="card h-100" style="width: 18rem;">
+                        <img src="{{ asset('landing/img/carousel-apoteker.jpeg') }}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Apt. Mirna Wulansari</h5>
+                            <p class="card-text">Universitas Hasannudin, Makassar</p>
+                            <p><span class="badge rounded-pill bg-secondary"><i class="bi bi-bag-fill"></i> 5
+                                    Tahun</span></p>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <b>Rp. 20.000</b>
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-end">
+                                    <button type="button" class="btn btn-primary" disabled>Chat</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-body-secondary"><i class="bi bi-circle-fill text-danger"></i>
+                                Offline</small>
+                        </div>
+                    </div>
+                </div>
                 <div class="col">
                     <div class="card h-100" style="width: 18rem;">
                         <img src="{{ asset('landing/img/carousel-apoteker.jpeg') }}" class="card-img-top">
@@ -61,53 +117,7 @@
                                 Offline</small>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="{{ asset('landing/img/carousel-apoteker.jpeg') }}" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Apt. Mirna Wulansari</h5>
-                            <p class="card-text">Universitas Hasannudin, Makassar</p>
-                            <p><span class="badge rounded-pill bg-secondary"><i class="bi bi-bag-fill"></i> 5
-                                    Tahun</span></p>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <b>Rp. 20.000</b>
-                                </div>
-                                <div class="col-lg-6 d-flex justify-content-end">
-                                    <button type="button" class="btn btn-primary">Chat</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-body-secondary"><i class="bi bi-circle-fill text-success"></i>
-                                Online</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="{{ asset('landing/img/carousel-apoteker.jpeg') }}" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">Apt. Mirna Wulansari</h5>
-                            <p class="card-text">Universitas Hasannudin, Makassar</p>
-                            <p><span class="badge rounded-pill bg-secondary"><i class="bi bi-bag-fill"></i> 5
-                                    Tahun</span></p>
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <b>Rp. 20.000</b>
-                                </div>
-                                <div class="col-lg-6 d-flex justify-content-end">
-                                    <button type="button" class="btn btn-primary" disabled>Chat</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-body-secondary"><i class="bi bi-circle-fill text-danger"></i>
-                                Offline</small>
-                        </div>
-                    </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

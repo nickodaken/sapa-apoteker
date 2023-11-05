@@ -12,7 +12,7 @@
                 <div class="navbar-nav ms-auto">
                     <a href="{{ route('beranda') }}" class="nav-item nav-link active">Beranda</a>
                     <a href="{{ route('apoteker') }}" class="nav-item nav-link">Chat Apoteker</a>
-                    <a href="{{ route('artikel') }}" class="nav-item nav-link">Artikel</a>
+                    {{-- <a href="{{ route('artikel') }}" class="nav-item nav-link">Artikel</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Halaman</a>
                         <div class="dropdown-menu bg-light mt-2">
@@ -21,8 +21,8 @@
                             <a href="{{ route('kebijakanprivasi') }}" class="dropdown-item">Kebiajakan Privasi</a>
                             <a href="{{ route('syaratketentuan') }}" class="dropdown-item">Syarat & Ketentuan</a>
                         </div>
-                    </div>
-                    <a href="#" class="btn btn-sm btn-outline-light py-sm-2 px-sm-2 rounded-pill">Masuk
+                    </div> --}}
+                    <a href="/login" class="btn btn-sm btn-outline-light py-sm-2 px-sm-2 rounded-pill">Masuk
                         / Daftar</a>
                 </div>
             </div>
